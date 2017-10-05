@@ -62,8 +62,10 @@ class D0 {
      * @returns {D0}
      */
     each (func) {
-        for (let i = 1; i <= this.count; i++) func(i, this.d(i))
-        return this
+        this.dimensions.forEach(function (dimension, i) {
+            func(i, this.d(i));
+        });
+        return this;
     }
 
 
